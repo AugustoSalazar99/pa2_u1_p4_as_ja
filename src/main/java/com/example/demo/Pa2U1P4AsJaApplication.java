@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.time.LocalDateTime;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,6 +20,14 @@ public class Pa2U1P4AsJaApplication implements  CommandLineRunner {
 		 * Spring Framework: framework que permite la construccion/ 
 		 * desarrollo de aplicaciones empresariales basadas en Spring
 		 */
+		
+		Profesor profe = new Profesor();
+		profe.setApellido("Salazar");
+		profe.setCedula("17258954");
+		profe.setFechaNacimiento(LocalDateTime.now());
+		profe.setNombre("Augusto");
+		
+		System.out.println(profe);
 	}
 
 }
