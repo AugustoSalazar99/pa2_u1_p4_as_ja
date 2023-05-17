@@ -3,6 +3,10 @@ package com.example.demo;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+import org.springframework.stereotype.Component;
+
+
+@Component
 public class Profesor {
 	private String nombre;
 	private String apellido;
