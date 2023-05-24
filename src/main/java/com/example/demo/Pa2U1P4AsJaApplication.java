@@ -69,10 +69,7 @@ public class Pa2U1P4AsJaApplication implements CommandLineRunner {
 		}
 		//4. busqueda por cedula
 		System.out.println(this.estudianteService.buscarPorCedula("231233487"));
-		
-		
-		
-		
+
 		
 		//busqueda por cedula q no existe
 		System.out.println(this.estudianteService.buscarPorCedula("23135487"));
