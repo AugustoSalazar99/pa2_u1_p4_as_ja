@@ -19,7 +19,7 @@ public class CuentaRepositoryImpl implements CuentaRepository{
 	}
 
 	@Override
-	public void actualiza(Cuenta cuenta) {
+	public void actualizar(Cuenta cuenta) {
 		// TODO Auto-generated method stub
 		this.eliminar(cuenta.getNumero());
 		this.insertar(cuenta);

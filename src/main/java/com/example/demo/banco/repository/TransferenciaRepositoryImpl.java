@@ -26,7 +26,7 @@ public class TransferenciaRepositoryImpl implements TransferenciaRepository {
 
 	@Override
 	public void eliminar(String numero) {
-		Transferencia transfer = this.seleccionar(numero);
+		Transferencia transfer = this.seleccionarPorNumero(numero);
 		baseDatos.remove(transfer);
 
 	}

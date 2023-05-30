@@ -20,7 +20,7 @@ public class CuentaServiceImpl implements CuentaService {
 
 	@Override
 	public void actualizar(Cuenta cuenta) {
-		this.cuentaRepository.actualiza(cuenta);
+		this.cuentaRepository.actualizar(cuenta);
 
 	}
 
@@ -31,9 +31,9 @@ public class CuentaServiceImpl implements CuentaService {
 
 	@Override
 	public Cuenta buscarPorNumero(String numero) {
-
+		// solo con calculos se hace invocacion al service
 		return this.cuentaRepository.seleccionarPorNumero(numero);
-		;
+		
 	}
 
 }

@@ -6,7 +6,7 @@ public interface CuentaRepository {
 
 	public void insertar(Cuenta cuenta);
 
-	public void actualiza(Cuenta cuenta);
+	public void actualizar(Cuenta cuenta);
 
 	public void eliminar(String numero);
 

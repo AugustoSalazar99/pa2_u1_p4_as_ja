@@ -1,14 +1,15 @@
 package com.example.demo.banco.repository.modelo;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+
 
 public class Cuenta {
 	private String numero;
 	private String tipo;
 	private BigDecimal saldo;
 	private String cedulaPropietario;
-	private LocalDateTime fechaApertura;
+	private LocalDate fechaApertura;
 
 	@Override
 	public String toString() {
@@ -49,12 +50,12 @@ public class Cuenta {
 		this.cedulaPropietario = cedulaPropietario;
 	}
 
-	public LocalDateTime getFechaApertura() {
+	public LocalDate getFechaApertura() {
 		return fechaApertura;
 	}
 
-	public void setFechaApertura(LocalDateTime fechaApertura) {
-		this.fechaApertura = fechaApertura;
+	public void setFechaApertura(LocalDate localDate) {
+		this.fechaApertura = localDate;
 	}
 
 }

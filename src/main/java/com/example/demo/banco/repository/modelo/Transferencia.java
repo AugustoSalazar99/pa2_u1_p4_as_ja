@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 public class Transferencia {
 	private String numero;
 	private BigDecimal monto;
-	private LocalDate fecha;
+	private LocalDateTime fecha;
 	private Cuenta cuentaOrigen;
 	private Cuenta cuentaDestino;
 
@@ -34,11 +34,11 @@ public class Transferencia {
 		this.monto = monto;
 	}
 
-	public LocalDate getFecha() {
+	public LocalDateTime getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(LocalDate fecha) {
+	public void setFecha(LocalDateTime fecha) {
 		this.fecha = fecha;
 	}
 
