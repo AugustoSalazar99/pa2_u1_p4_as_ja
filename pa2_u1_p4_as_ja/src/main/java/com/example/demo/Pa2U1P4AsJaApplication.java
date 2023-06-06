@@ -11,7 +11,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.example.demo.banco.repository.modelo.Cajero;
 import com.example.demo.banco.repository.modelo.Cuenta;
+import com.example.demo.banco.repository.modelo.Presidente;
 import com.example.demo.banco.service.CuentaService;
 import com.example.demo.banco.service.TransferenciaService;
 import com.example.demo.repository.modelo.Estudiante;
@@ -19,13 +21,16 @@ import com.example.demo.service.EstudianteService;
 
 @SpringBootApplication
 public class Pa2U1P4AsJaApplication implements CommandLineRunner { // me permite trabajar con la consola
-
 	@Autowired
-	private CuentaService cuentaService;
-
+	private Cajero cajero;
 	@Autowired
-
-	private TransferenciaService transferenciaService;
+	private Cajero cajero1;
+	@Autowired
+	private Presidente presidente;
+	
+	@Autowired
+	private Presidente presidente2;
+	
 	
 	public static void main(String[] args) {
 		SpringApplication.run(Pa2U1P4AsJaApplication.class, args);
@@ -33,35 +38,27 @@ public class Pa2U1P4AsJaApplication implements CommandLineRunner { // me permite
 
 	@Override
 	public void run(String... args) throws Exception {
-		//cuenta 1
-		Cuenta cta01 = new Cuenta();
-		cta01.setCedulaPropietario("1726600537");
-		cta01.setFechaApertura(LocalDate.now());
-		cta01.setNumero("526");
-		cta01.setSaldo(new BigDecimal(200));
-		cta01.setTipo("A");
-		this.cuentaService.guardar(cta01);
+		this.cajero.setApellido("Salazar");
+		this.cajero.setNombre("Augusto");
+		this.cajero.setSalario(new BigDecimal(100));
+		System.out.println(this.cajero);
 		
-		//cuenta 2
-		Cuenta cta02 = new Cuenta();
-		cta02.setCedulaPropietario("1785693458");
-		cta02.setFechaApertura(LocalDate.now());
-		cta02.setNumero("963");
-		cta02.setSaldo(new BigDecimal(100));
-		cta02.setTipo("A");
-		this.cuentaService.guardar(cta02);
 		
-		this.transferenciaService.realizar("526", "963", new BigDecimal(10));
-	
-		System.out.println("Saldo Origen: "+this.cuentaService.buscarPorNumero("526").getSaldo());
 		
-		System.out.println("Saldo destino: "+this.cuentaService.buscarPorNumero("963").getSaldo());
+		this.cajero1.setApellido("Arteaga");
+		this.cajero1.setNombre("Jhon");
+		this.cajero1.setSalario(new BigDecimal(1000));
+		System.out.println(this.cajero1);
+		System.out.println(this.cajero1.getApellido());
 		
-		List<Cuenta> reporte=this.cuentaService.reporteDeTodos();
-		System.out.println(">>Reporte de las cuentas:");
-		for(Cuenta ctatodo : reporte) {
-			System.out.println(ctatodo);
-		}
+		this.presidente.setApellido("Porras");
+		this.presidente.setNombre("Andreas");
+		this.presidente.setCedula("179213123");
+		
+		this.presidente.setApellido("Taco");
+		
+		System.out.println(this.presidente);
+		System.out.println(this.presidente2);
 		
 		
 		
