@@ -13,7 +13,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.example.demo.banco.repository.modelo.Cajero;
 import com.example.demo.banco.repository.modelo.Cuenta;
+import com.example.demo.banco.repository.modelo.Impuesto;
 import com.example.demo.banco.repository.modelo.Presidente;
+import com.example.demo.banco.repository.modelo.Transferencia;
+import com.example.demo.banco.service.CargaSistemaService;
 import com.example.demo.banco.service.CuentaService;
 import com.example.demo.banco.service.TransferenciaService;
 import com.example.demo.repository.modelo.Estudiante;
@@ -30,7 +33,12 @@ public class Pa2U1P4AsJaApplication implements CommandLineRunner { // me permite
 	
 	@Autowired
 	private Presidente presidente2;
-	
+	@Autowired
+	private CargaSistemaService cargaSistemaService;
+	@Autowired
+	private Impuesto impuesto;
+	@Autowired
+	private TransferenciaService transferenciaService;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(Pa2U1P4AsJaApplication.class, args);
@@ -60,7 +68,16 @@ public class Pa2U1P4AsJaApplication implements CommandLineRunner { // me permite
 		System.out.println(this.presidente);
 		System.out.println(this.presidente2);
 		
+		System.out.println("************************Segunda Parte");
 		
+		this.cargaSistemaService.cargar();
+		Transferencia trans = new Transferencia();
+		trans.setCuentaDestino(null);
+		trans.setCuentaOrigen(null);
+		trans.setFechas(LocalDateTime.now() );
+		trans.setMonto(new BigDecimal(100));
+		trans.setNumero("211231");
+		this.transferenciaService.guardar(trans);
 		
 	}
 
